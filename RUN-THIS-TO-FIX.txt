@@ -1,0 +1,121 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║  ⚠️  FIREWALL IS BLOCKING YOUR PHONE FROM ACCESSING THE SERVER           ║
+║                                                                          ║
+║  Follow these steps to fix it:                                           ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+🔥 THE PROBLEM:
+
+   Windows Firewall is blocking connections from your phone.
+   That's why you get "This site can't be reached".
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ THE FIX (Choose ONE method):
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+METHOD 1: Run the Firewall Fix Script (EASIEST) ⭐
+
+   1. Right-click on "FIREWALL-FIX.bat"
+   2. Select "Run as administrator"
+   3. Click "Yes" when prompted
+   4. Press any key when it asks
+   5. Done! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+METHOD 2: Manual Firewall Configuration
+
+   1. Press Windows + R
+   2. Type: wf.msc
+   3. Press Enter
+   4. Click "Inbound Rules" on left
+   5. Click "New Rule..." on right
+   6. Select "Port" → Next
+   7. Select "TCP"
+   8. Enter ports: 5000,5173
+   9. Click Next → Allow the connection → Next
+   10. Check "Private" only → Next
+   11. Name: QResto Servers
+   12. Click Finish ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+METHOD 3: Run These Commands (PowerShell as Admin)
+
+   Open PowerShell as Administrator and run:
+
+   netsh advfirewall firewall add rule name="QResto Backend" dir=in action=allow protocol=TCP localport=5000
+
+   netsh advfirewall firewall add rule name="QResto Frontend" dir=in action=allow protocol=TCP localport=5173
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+METHOD 4: Temporarily Disable Firewall (FOR TESTING ONLY)
+
+   ⚠️  NOT RECOMMENDED FOR SECURITY REASONS
+   
+   1. Windows Security → Firewall & network protection
+   2. Click your active network
+   3. Turn OFF Windows Defender Firewall
+   4. Test if phone can access
+   5. Turn firewall back ON after testing
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TEST AFTER FIXING FIREWALL:
+
+   1. On your phone's browser, go to:
+      http://10.103.72.117:5173
+
+   2. Should show QResto login page ✅
+
+   3. Login and create a QR code with URL: https://google.com
+
+   4. Download PNG and scan → Should redirect! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ STILL NOT WORKING AFTER FIREWALL FIX?
+
+   Check these:
+
+   1. Phone on same WiFi as computer?
+      - Check phone WiFi settings
+      - Should be connected to same network
+
+   2. Antivirus software blocking?
+      - Temporarily disable antivirus
+      - Test again
+
+   3. Router blocking?
+      - Some routers have AP isolation
+      - Check router settings
+      - Or try connecting computer directly to router
+
+   4. Wrong IP address?
+      - Run: ipconfig
+      - Find your current IP address
+      - Update .env file if IP changed
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 QUICK VERIFICATION:
+
+   On your computer, open browser and test:
+   
+   http://10.103.72.117:5000/health
+   
+   Should show: {"status":"ok",...}
+   
+   If this works on computer but not phone = Firewall issue
+   If this doesn't work anywhere = Server not running on 0.0.0.0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ RECOMMENDED: Use METHOD 1 (Run FIREWALL-FIX.bat as admin)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

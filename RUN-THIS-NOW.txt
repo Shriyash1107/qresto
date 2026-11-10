@@ -1,0 +1,111 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║  🔥 FIREWALL IS BLOCKING - RUN THIS FIX NOW!                             ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+⚠️  PROBLEM IDENTIFIED:
+
+   Windows Firewall is BLOCKING your phone from accessing the server.
+   That's why you get "This site can't be reached" when scanning QR codes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ THE FIX (DO THIS NOW):
+
+   Step 1: Find the file "FIREWALL-FIX-COMPLETE.bat" in this folder
+   
+   Step 2: RIGHT-CLICK on it
+   
+   Step 3: Select "Run as administrator"
+   
+   Step 4: Click "Yes" when Windows asks for permission
+   
+   Step 5: Press any key when the window opens
+   
+   Step 6: Wait for "SUCCESS!" message
+   
+   Step 7: Press any key to close
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 AFTER RUNNING THE FIX, TEST IMMEDIATELY:
+
+   On Your Computer (Browser):
+   
+   1. Open: http://10.103.72.117:5000/health
+   2. Should show: {"status":"ok",...}
+   3. If this works, firewall is fixed! ✅
+   
+   On Your Phone (Browser):
+   
+   1. Phone must be on SAME WiFi as computer
+   2. Open: http://10.103.72.117:5173
+   3. Should show QResto login page ✅
+   4. If YES → Firewall fix worked!
+   5. If NO → Check WiFi connection
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 AFTER FIREWALL IS FIXED - CREATE QR CODE:
+
+   1. On phone or computer: http://10.103.72.117:5173
+   
+   2. Login or Register
+   
+   3. Create QR Code:
+      - Name: Phone Test
+      - Type: Single Redirect
+      - Destination URL: https://google.com  ⬅️ MUST have https://
+   
+   4. Download PNG
+   
+   5. Scan with phone camera
+   
+   6. Should redirect to Google! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ IF STILL NOT WORKING AFTER FIREWALL FIX:
+
+   Problem: Phone can't reach http://10.103.72.117:5173
+   
+   Solutions:
+   
+   1. Check WiFi
+      → Phone Settings → WiFi
+      → Must be same network as computer
+      → Try disconnecting and reconnecting
+   
+   2. Check IP Address
+      → On computer, run: ipconfig
+      → Find IPv4 Address
+      → If different from 10.103.72.117, let me know
+   
+   3. Antivirus Blocking?
+      → Temporarily disable antivirus
+      → Test again
+      → Re-enable after testing
+   
+   4. Router AP Isolation?
+      → Some routers block device-to-device communication
+      → Check router settings
+      → Look for "AP Isolation" or "Client Isolation"
+      → Disable it if enabled
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 QUICK CHECKLIST:
+
+   ☐ Run FIREWALL-FIX-COMPLETE.bat as administrator
+   ☐ Computer browser: http://10.103.72.117:5000/health shows OK
+   ☐ Phone on same WiFi as computer
+   ☐ Phone browser: http://10.103.72.117:5173 loads page
+   ☐ Create NEW QR code with https:// in URL
+   ☐ Scan QR code → redirects successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ START HERE: Right-click FIREWALL-FIX-COMPLETE.bat → Run as administrator
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

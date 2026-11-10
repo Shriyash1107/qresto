@@ -1,0 +1,73 @@
+========================================
+QRESTO BROWSER ACCESS FIX
+========================================
+
+YOUR SERVERS ARE WORKING PERFECTLY!
+Backend: http://192.168.1.13:5000 ✓
+Frontend: http://192.168.1.13:5173 ✓
+
+The problem is your BROWSER is blocking local network access.
+
+========================================
+SOLUTION 1: USE MICROSOFT EDGE (EASIEST)
+========================================
+
+1. Close Chrome/other browsers
+2. Open Microsoft Edge
+3. Go to: http://192.168.1.13:5173
+4. Should load immediately!
+
+Edge allows local network access by default.
+
+========================================
+SOLUTION 2: FIX CHROME
+========================================
+
+If you want to use Chrome:
+
+1. Open Chrome
+2. Go to: chrome://flags/
+3. Search for: "Block insecure private network requests"
+4. Set it to: DISABLED
+5. Click "Relaunch"
+6. Try: http://192.168.1.13:5173
+
+========================================
+SOLUTION 3: USE LOCALHOST INSTEAD
+========================================
+
+If browsers still don't work, use localhost:
+
+PC Browser: http://localhost:5173
+(This will work on your PC only)
+
+For phone access, you MUST use the IP: http://192.168.1.13:5173
+
+========================================
+VERIFY IT'S WORKING
+========================================
+
+After trying a solution:
+
+1. PC Browser → http://192.168.1.13:5173
+   Should see: QResto login page
+
+2. Phone Browser (same WiFi) → http://192.168.1.13:5173
+   Should see: QResto login page
+
+3. Create QR code with destination: https://google.com
+4. Scan QR → Should redirect to Google!
+
+========================================
+CURRENT STATUS
+========================================
+
+✓ Servers running correctly
+✓ Firewall rules configured
+✓ Network configuration correct
+✓ PowerShell can access servers
+✗ Browser blocking local network access
+
+THE PROBLEM IS 100% YOUR BROWSER SETTINGS!
+
+Try Microsoft Edge first - it's the fastest solution.

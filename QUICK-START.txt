@@ -1,0 +1,93 @@
+========================================
+🚀 QRESTO - MAKE IT WORK GLOBALLY
+========================================
+
+YOU WANT: QR codes that work from ANY WiFi or mobile data
+
+YOUR OPTIONS:
+
+========================================
+OPTION 1: NGROK (Test in 5 minutes)
+========================================
+
+✅ Works globally immediately
+✅ Free
+❌ URL changes when you restart
+❌ Computer must stay on
+
+HOW TO DO IT:
+
+1. Download ngrok:
+   https://ngrok.com/download
+
+2. Extract ngrok.exe to this folder:
+   C:\Users\HP\OneDrive\Documents\Desktop\qr\
+
+3. Sign up free:
+   https://dashboard.ngrok.com/signup
+
+4. Get your token:
+   https://dashboard.ngrok.com/get-started/your-authtoken
+
+5. Run in PowerShell:
+   .\ngrok.exe config add-authtoken YOUR_TOKEN
+
+6. Double-click:
+   START-WITH-NGROK.bat
+
+7. Copy the public URLs from ngrok windows
+
+8. Update .env files with those URLs
+
+9. Restart servers
+
+10. TEST on phone with ngrok URL!
+
+========================================
+OPTION 2: RENDER.COM (Permanent, 30 min)
+========================================
+
+✅ Works forever
+✅ Free
+✅ Professional URL
+✅ Works 24/7 even when PC is off
+
+HOW TO DO IT:
+
+1. Create GitHub account:
+   https://github.com/signup
+
+2. Install Git:
+   https://git-scm.com/download/win
+
+3. Push your code to GitHub
+
+4. Sign up at Render:
+   https://render.com
+
+5. Deploy backend and frontend
+
+6. Get permanent URLs like:
+   https://qresto-backend.onrender.com
+   https://qresto-frontend.onrender.com
+
+7. QR codes work FOREVER from anywhere!
+
+========================================
+READ THE COMPLETE GUIDE
+========================================
+
+Open: COMPLETE-SETUP-GUIDE.md
+
+It has step-by-step instructions with screenshots for both options!
+
+========================================
+NEED HELP?
+========================================
+
+Tell me:
+- "help with ngrok" 
+- "help with render"
+- "I'm stuck at step X"
+
+I'll guide you through it!

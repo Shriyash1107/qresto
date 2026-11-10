@@ -1,0 +1,130 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║  ⚠️⚠️⚠️  YOU MUST RUN THE FIREWALL FIX NOW! ⚠️⚠️⚠️                          ║
+║                                                                          ║
+║  YOUR PC BROWSER SHOWS "This site can't be reached"                      ║
+║  This is because WINDOWS FIREWALL is blocking port 5000                  ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+🔴 WHAT YOU'RE SEEING:
+
+   Browser URL: 10.103.72.117:5000/health
+   Error: "This site can't be reached"
+   Error Code: ERR_CONNECTION_TIMED_OUT
+   
+   This means Windows Firewall is BLOCKING the connection!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ THE FIX - FOLLOW THESE EXACT STEPS:
+
+   1. Look in this folder for: FIREWALL-FIX-COMPLETE.bat
+   
+   2. RIGHT-CLICK on FIREWALL-FIX-COMPLETE.bat
+      (Don't double-click, must RIGHT-CLICK!)
+   
+   3. Click "Run as administrator"
+   
+   4. Windows will ask "Do you want to allow this app to make changes?"
+      → Click YES
+   
+   5. A black window will open
+      → Press ANY KEY when it says "Press any key to continue"
+   
+   6. Wait 2 seconds
+   
+   7. You'll see "SUCCESS! Firewall configured correctly!"
+      → Press ANY KEY to close
+   
+   8. DONE! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 AFTER RUNNING THE SCRIPT, TEST IMMEDIATELY:
+
+   1. Refresh your browser (press F5)
+      URL: http://10.103.72.117:5000/health
+   
+   2. Should now show:
+      {"status":"ok","timestamp":"..."}
+   
+   3. If YES → Firewall fixed! ✅
+      If NO → Windows might have blocked the script
+              Try Method 2 below
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 METHOD 2 (If script doesn't work):
+
+   Manual Firewall Configuration:
+   
+   1. Press Windows Key + R
+   
+   2. Type: wf.msc
+   
+   3. Press Enter
+   
+   4. Click "Inbound Rules" on the left
+   
+   5. Click "New Rule..." on the right
+   
+   6. Select "Port" → Click Next
+   
+   7. Select "TCP"
+   
+   8. Type in "Specific local ports": 5000,5173
+   
+   9. Click Next
+   
+   10. Select "Allow the connection" → Click Next
+   
+   11. Make sure ONLY "Private" is checked → Click Next
+   
+   12. Name: QResto Servers
+   
+   13. Click Finish ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 AFTER FIREWALL IS FIXED:
+
+   On Your PC Browser:
+   
+   1. Go to: http://10.103.72.117:5173
+   2. Should load QResto ✅
+   
+   On Your Phone Browser (same WiFi):
+   
+   1. Go to: http://10.103.72.117:5173
+   2. Should load QResto ✅
+   3. Create QR code with https://google.com
+   4. Scan → Should redirect! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ WHY THIS IS HAPPENING:
+
+   - Server IS running correctly ✅
+   - Server IS listening on 0.0.0.0 ✅
+   - Configuration IS correct ✅
+   - BUT Windows Firewall is blocking incoming connections ❌
+   
+   Solution: Allow Node.js through firewall (run the script!)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ START NOW:
+
+   → RIGHT-CLICK on FIREWALL-FIX-COMPLETE.bat
+   → Run as administrator
+   → Click YES
+   → Press any key twice
+   → Refresh browser
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+I cannot run the firewall fix for you because it needs administrator 
+privileges. YOU must run it yourself by RIGHT-CLICKING the .bat file!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -2,10 +2,14 @@ const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
+console.log('🗄️  Initializing database...');
+
 // Use /tmp for cloud deployments, or local data directory
 const DB_PATH = process.env.NODE_ENV === 'production' 
   ? '/tmp/qresto.db'
   : path.join(__dirname, 'data', 'qresto.db');
+
+console.log('📁 Database path:', DB_PATH);
 
 // Ensure directory exists (only for local development)
 if (process.env.NODE_ENV !== 'production') {
@@ -15,8 +19,14 @@ if (process.env.NODE_ENV !== 'production') {
   }
 }
 
-const db = new Database(DB_PATH);
-console.log(`📁 Database initialized at: ${DB_PATH}`);
+let db;
+try {
+  db = new Database(DB_PATH);
+  console.log(`✅ Database initialized at: ${DB_PATH}`);
+} catch (error) {
+  console.error('❌ Failed to initialize database:', error);
+  throw error;
+}
 
 // Enable WAL mode for better performance
 db.pragma('journal_mode = WAL');

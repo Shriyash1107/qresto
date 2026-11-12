@@ -14,6 +14,11 @@ const redirectRoutes = require('./routes/redirect');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+console.log('🚀 Starting QResto server...');
+console.log('📝 Environment:', process.env.NODE_ENV);
+console.log('🔌 Port:', PORT);
+console.log('🌐 Client URL:', process.env.CLIENT_URL);
+
 // Middleware
 app.use(helmet({
   contentSecurityPolicy: false,
@@ -39,7 +44,7 @@ app.use('/api/', limiter);
 
 // Health check
 app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({ status: 'ok', timestamp: new Date().toISOString(), environment: process.env.NODE_ENV || 'development' });
 });
 
 // Routes

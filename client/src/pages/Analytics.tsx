@@ -151,9 +151,12 @@ export default function Analytics() {
                     cx="50%"
                     cy="50%"
                     outerRadius={80}
-                    label={({ device_type, count }) => `${device_type}: ${count}`}
+                    label={(entry: any) => {
+                      const value = entry as DeviceBreakdown;
+                      return `${value.device_type}: ${value.count}`;
+                    }}
                   >
-                    {deviceBreakdown.map((entry, index) => (
+                    {deviceBreakdown.map((_entry, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>

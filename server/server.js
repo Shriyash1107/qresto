@@ -62,5 +62,8 @@ app.use((err, req, res, next) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ QResto server running on http://localhost:${PORT}`);
   console.log(`📊 Dashboard: ${process.env.CLIENT_URL || 'http://localhost:5173'}`);
-  console.log(`🌐 Network: http://10.103.72.117:${PORT}`);
+  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+}).on('error', (err) => {
+  console.error('❌ Failed to start server:', err);
+  process.exit(1);
 });
